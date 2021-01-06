@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuisnessLayer
+namespace DataAccessLayer
 {
-    public class Class1
+    class Constants
     {
     }
 }
