@@ -41,7 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GalleryBuisness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReviewerBuisness.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{01E7B47E-A0A9-4513-911E-950C878CF468}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
