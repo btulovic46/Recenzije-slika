@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GalleryBuisness.cs" />
+    <Compile Include="PictureBuisness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReviewBuisness.cs" />
     <Compile Include="ReviewerBuisness.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -39,7 +39,7 @@ namespace DataAccessLayer
             }
             return results;
         }
-        public int InsertReviewer(Review r)
+        public int InsertReview(Review r)
         {
             using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
             {
