@@ -51,5 +51,28 @@ namespace DataAccessLayer
                 return sqlCommand.ExecuteNonQuery();
             }
         }
+        public int UpdateReviewer(Reviewer r)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
+            {
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = sqlConnection;
+                sqlCommand.CommandText = string.Format("UPDATE Reviewer SET Name = '{0}', LastName = '{1}', Email = '{2}',Adress = '{3}',City='{4}',PhoneNumber={5} WHERE Id = '{6}'",
+                 r.Name, r.LastName, r.Email, r.Adress, r.City,r.PhoneNumber,r.Id);
+
+                return sqlCommand.ExecuteNonQuery();
+            }
+        }
+        public int DeleteReviewer(Reviewer r)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
+            {
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = sqlConnection;
+                sqlCommand.CommandText = string.Format("DELETE FROM Reviewer WHERE Id = '{0}'", r.Id);
+
+                return sqlCommand.ExecuteNonQuery();
+            }
+        }
     }
 }

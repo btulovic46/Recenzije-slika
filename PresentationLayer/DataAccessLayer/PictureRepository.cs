@@ -51,5 +51,28 @@ namespace DataAccessLayer
                 return sqlCommand.ExecuteNonQuery();
             }
         }
+        public int UpdatePicture(Picture p)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
+            {
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = sqlConnection;
+                sqlCommand.CommandText = string.Format("UPDATE Picture SET Name = '{0}', Creator = '{1}', Description = '{2}', AverageGrade = {3}, WHERE Id = '{4}'",
+                 p.Name, p.Creator, p.Description, p.AverageGrade, p.Id);
+
+                return sqlCommand.ExecuteNonQuery();
+            }
+        }
+        public int DeletePicture(Picture p)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(Constants.connectionString))
+            {
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.Connection = sqlConnection;
+                sqlCommand.CommandText = string.Format("DELETE FROM Picture WHERE Id = '{0}'", p.Id);
+
+                return sqlCommand.ExecuteNonQuery();
+            }
+        }
     }
 }
